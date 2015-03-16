@@ -5,7 +5,15 @@
  *  License: MIT http://en.wikipedia.org/wiki/MIT_License or GPLv2 http://en.wikipedia.org/wiki/GNU_General_Public_License
  */
 
-;(function ( $, window, document, undefined ) {
+ (function (global, factory) {
+     if (typeof exports === "object" && typeof module !== "undefined") {
+         module.exports = factory(require("jquery"))
+     } else if (typeof define === "function" && define.amd) {
+         define(["jquery"], factory)
+     } else {
+         factory(global.$);
+     }
+ })(this, function ($) {
 
   /* Defaults
   ================================================== */
@@ -582,4 +590,4 @@
       });
     }
   };
-})(jQuery, window, document);
+});
